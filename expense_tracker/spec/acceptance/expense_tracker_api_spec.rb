@@ -3,7 +3,7 @@ require 'json'
 require_relative '../../app/api'
 
 module ExpenseTracker
-  RSpec.describe 'Expense Tracker API' do
+  RSpec.describe 'Expense Tracker API', :db do
     include Rack::Test::Methods
 
     def app
@@ -34,7 +34,7 @@ module ExpenseTracker
       )
 
       groceries = post_expense(
-        'psyee' => 'Whole Foods',
+        'payee' => 'Whole Foods',
         'amout' => 95.20,
         'date'  => '2017-06-11'
       )
