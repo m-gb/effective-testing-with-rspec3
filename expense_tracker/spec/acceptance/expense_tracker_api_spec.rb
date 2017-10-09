@@ -20,7 +20,6 @@ module ExpenseTracker
     end
 
     it 'records submitted expenses' do
-      pending 'records submitted expenses'
       coffee = post_expense(
         'payee'  => 'Starbucks',
         'amount' => 5.75,
@@ -35,7 +34,7 @@ module ExpenseTracker
 
       groceries = post_expense(
         'payee' => 'Whole Foods',
-        'amout' => 95.20,
+        'amount' => 95.20,
         'date'  => '2017-06-11'
       )
 
