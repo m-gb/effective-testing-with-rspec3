@@ -101,3 +101,23 @@ RSpec.configure do |config|
   # as the one that triggered the failure.
   Kernel.srand config.seed
 end
+
+# RSpec.configure do |rspec|
+#   rspec.alias_example_group_to :pdescribe, pry: true
+#   rspec.alias_example_to :pit, pry: true
+#   # After hook that calls binding.pry after examples with :pry defined.
+#   rspec.after(:example, pry: true) do |ex|
+#     require 'pry'
+#     binding.pry
+#   end
+# end
+
+# Defines a hook once for the entire suite(things that aren't essential for understanding how the specs work).
+# Can use :suite or :context instead of :example(around hooks only support :example scope).
+# RSpec.configure do |config|
+#   config.around(:example) do |ex|
+#     original_env = ENV.to_hash
+#     ex.run
+#     ENV.replace(original_env)
+#   end
+# end

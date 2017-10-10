@@ -10,16 +10,17 @@ module ExpenseTracker
       API.new(ledger: ledger)
     end
 
-    let(:ledger) { instance_double('ExpenseTracker::Ledger') } #
+    let(:ledger) { instance_double('ExpenseTracker::Ledger') } # initializer.
 
     describe 'POST /expenses' do
       context 'when the expense is successfully recorded' do
         let(:expense) { { 'some' => 'data' } }
 
+        # hook(expressing the description of context as code)
         before do
           allow(ledger).to receive(:record) # Configures the test double's behavior.
-          .with(expense)
-          .and_return(RecordResult.new(true, 417, nil))
+            .with(expense)
+            .and_return(RecordResult.new(true, 417, nil))
         end
 
         it 'returns the expense id' do
@@ -36,12 +37,12 @@ module ExpenseTracker
       end
 
       context 'when the expense fails validation' do
-        let (:expense) { { 'some' => 'data' } }
+        let(:expense) { { 'some' => 'data' } }
 
         before do
           allow(ledger).to receive(:record)
             .with(expense)
-            .and_return(RecordResult.new(false, 417, 'Expense incomplete'))
+            .and_return(RecordResult.new(false, 417, 'Expense incomplete')) # fills the RecordResult object with a false success.
         end
 
         it 'returns an error message' do
