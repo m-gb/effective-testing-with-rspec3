@@ -2,6 +2,7 @@ require 'rack/test'
 require 'json'
 require_relative '../../app/api'
 
+# both the app and the specs are in a module so we have access to all the classes defined by the app.
 module ExpenseTracker
   RSpec.describe 'Expense Tracker API', :db do
     include Rack::Test::Methods

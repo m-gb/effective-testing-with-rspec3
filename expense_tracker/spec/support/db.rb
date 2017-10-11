@@ -6,8 +6,8 @@ RSpec.configure do |c|
     DB[:expenses].truncate # Removes any leftover test data from the table.
   end
 
-  # Loads for any spec that touches the db, but not for unit specs(by requiring it).
   # Avoids littering each db-dependent spec.
+  # Loads for any spec that touches the db, but not for unit specs(by requiring it).
   c.around(:example, :db) do |example|
     DB.transaction(rollback: :always) { example.run }
   end
