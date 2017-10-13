@@ -13,6 +13,7 @@ RSpec.configure do |c|
   # Avoids littering each db-dependent spec.
   # Loads for any spec that touches the db, but not for unit specs(by requiring it).
   c.around(:example, :db) do |example|
+    # Makes sequel write the example descriptions into its log.
     DB.log_info "Starting example: #{example.metadata[:description]}"
     DB.transaction(rollback: :always) { example.run }
     DB.log_info "Ending example: #{example.metadata[:description]}"
