@@ -58,5 +58,14 @@ RSpec.configure do |config|
   config.filter_run_when_matching :focus # If nothing matches the filter, RSpec ignores it.
 end
 
-# $rspec --tag fast # Runs just the examples tagged with :fast.
+# $rspec --tag fast # Runs just the examples tagged with :fast ($rspec -t fast).
 # $rspec --tag ~fast # Runs all examples that lack the :fast tag.
+# $rspec --only-failures # Filters to just the examples that failed last time.
+# $rspec --next-failure # Apply --only-failures and abort after one failure.
+# $rspec -fd # Documentation format(Group and example names).
+# $rspec -e milk -fd # Running a specific example by part of the description.                     
+# $rspec spec/sandwich_spec.rb:7 # Runs a particular example or group.
+# $rspec -p # Enables profiling of examples and lists the slowest examples (default: 10).
+# $rspec --dry-run -fd # Quick documentation-like output.
+# Running specific specs: fcontext, fit, fdescribe, or:   $ rspec --tag focus
+# Marking work in progress: pending, skip or xit(which is like fit, but it skips the example).

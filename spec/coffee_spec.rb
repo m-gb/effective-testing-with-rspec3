@@ -49,12 +49,3 @@ RSpec.describe 'A cup of coffee' do
     end
   end
 end
-
-# To see the output in documentation format:              $ rspec -fd
-# Running a specific example by name:                     $ rspec -e milk -fd
-# Running the most recent failing spec:                   $ rspec ./spec/coffee_spec.rb:26
-# Running all the failures:                               $ rspec --only-failures, or: $ rspec --tag last_run_status:failed
-# Running --only-failures and aborting after one failure: $ rspec --next-failure
-# Running specific specs: fcontext, fit, fdescribe, or:   $ rspec --tag focus
-# Marking work in progress: pending, skip or xit(which is like fit, but it skips the example)
-# If a spec is failing because of a bug in a dependency, mark it with: pending 'waiting for a fix for Hitchhiker's Guide bug #42
